@@ -40,3 +40,21 @@ Caching is one way to improve the performance of the system, as it enables fewer
 
 * First Level Caching (Entity Cache)
 * Second Level Caching (Query Cache)
+
+### Cache providers
+* EHCashe
+* OSCashe
+* Infinispan
+
+### Caching Strategies
+* Read Only - configurations
+* Read-Write - This strategy is good for entities which are updated by the application
+* Nonrestricted Read-Write
+* Transactional
+
+### Query Caches
+Alternatively, to entities, you can store queries in a cache too. However, this query cache works close together with the second-level cache so it is only a way to attend if you utilize a second-level cache.
+
+To use the query cache requires two additional cache regions: one for the cached query results and one for the timestamps when a table was lastly updated.
+
+Using a query cache is only reasonable if you have queries which run often with the same parameters.
