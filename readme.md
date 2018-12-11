@@ -15,7 +15,17 @@ Hibernate does it by org.hibernate.dialect.{DIALECT_CLASS}. Like MySQL: org.hibe
 
 ## HQL - Hibernate Query Language
 HQL is an abbreviation of Hibernate Query Language. It is SQL inspired language provided by hibernate. A developer can write SQL like queries to work with data objects.
+### Java Code Example
+```
+//criteria
+session.createCriteria(User.class).list();
 
+//query
+session.createQuery("from User").list();
+
+//sql query
+session.createSQLQuery("select count(*) from users").uniqueResult();
+```
 ## Connection Pooking
 Hibernate has its own internal connection pooling but it also supports some third-party connection pooling for production use.
 * c3p0 connection pool
