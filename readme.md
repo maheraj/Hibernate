@@ -26,8 +26,9 @@ session.createQuery("from User").list();
 //sql query
 session.createSQLQuery("select count(*) from users").uniqueResult();
 ```
-## Connection Pooking
-Hibernate has its own internal connection pooling but it also supports some third-party connection pooling for production use.
+## Connection Pooling
+Hibernate has its own internal connection pooling but it also supports some third-party connection pooling for production use. Connection pool is used to open and manage connections between application and database.
+
 * c3p0 connection pool
 * Proxool connection pool
 * obtaining connections from an application server, using JNDI
